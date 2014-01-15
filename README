@@ -1,0 +1,17 @@
+Simple log domain operations for positive numbers
+to extend range of computation in exchange of accuracy.
+
+LLDouble has two states:
+  lin domain:
+    operations just like normal doubles, range = (2.45e-308 ~ inf)
+  log domain:
+    the numbers are stored in log with natural base
+    e.g., 1.0 is stored as 0.0
+    operations are performed as if being converted back to linear.
+    e.g., A + B = log(exp(A) + exp(B))
+Convert between states:
+  LLDouble::to_lin()
+  LLDouble::to_log()
+
+
+See logarithmetics and test_logarithmetics.cpp.
